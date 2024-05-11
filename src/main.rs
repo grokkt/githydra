@@ -68,7 +68,6 @@ fn githydra() -> Command {
         )
 }
 
-
 fn main() -> Result<(), GHErr> {
 
     let matches = githydra().get_matches();
@@ -186,8 +185,6 @@ fn handle_add_account(sub_matches: &ArgMatches) -> Result<(), GHErr> {
     //--------------------------------
     // Generate git hook scripts if needed
 
-
-
     //--------------------------------
     // SSH Config stuff
     //
@@ -234,13 +231,10 @@ fn handle_add_account(sub_matches: &ArgMatches) -> Result<(), GHErr> {
         &serialize_ssh_config_entry(
             ssh_alias,
             &ssh_privkey_path
-            // "~/.ssh/id_rsa_grokkt"
         )
     ).unwrap();
 
-
     // -----------------
-    //
     // Step 5
     // - Making username directory
     let dir_name = sub_matches.get_one::<String>("dirname")
@@ -250,8 +244,6 @@ fn handle_add_account(sub_matches: &ArgMatches) -> Result<(), GHErr> {
 
     fs::create_dir(dir_name)
         .map_err(|e| new_gh_err(format!("Error creating directory: {:#?}", e)))?;       
-
-
 
 
     // Script stuff
@@ -268,8 +260,6 @@ fn serialize_ssh_config_entry(hostname: &str, privkeypath: &str) -> Vec<u8> {
     let z = entry.as_bytes();
     z.to_vec()
 }
-
-//------
 
 pub enum ToVerify {
     GIT,
@@ -301,9 +291,6 @@ fn verify_installed(prog: ToVerify) -> Result<(), GHErr> {
     }
     Ok(())
 }
-
-
-//----
 
 // Escape {} with doubles, so "{{}}" gives "{}"
 fn template_script_starter() -> Vec<u8> {
