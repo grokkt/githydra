@@ -1,15 +1,22 @@
 [
   {
     "dir": "ex_a",
-    "email": "AAA@example.com"
+    "email": "AAA@example.com",
+    "git_repo": "username/repo.git",
+    "ssh_config_alias": "github-new"
   },
   {
     "dir": "githydra",
-    "email": "BBB@example.com"
+    "email": "BBB@example.com",
+    "git_repo": "username/repo.git",
+    "ssh_config_alias": "github-new"
+
   },
   {
     "dir": "grokkt",
-    "email": "156196590+grokkt@users.noreply.github.com"
+    "email": "156196590+grokkt@users.noreply.github.com",
+    "git_repo": "username/repo.git",
+    "ssh_config_alias": "github-new"
   }
 ]
 
